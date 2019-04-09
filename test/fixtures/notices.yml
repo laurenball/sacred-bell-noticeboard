@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  sessions: 1
+  openings: 1
+  author: MyString
+  notes: MyString
+  reward: MyString
+  requester: MyString
+
+two:
+  title: MyString
+  sessions: 1
+  openings: 1
+  author: MyString
+  notes: MyString
+  reward: MyString
+  requester: MyString
