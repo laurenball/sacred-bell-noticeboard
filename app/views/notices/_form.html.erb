@@ -1,5 +1,5 @@
-<%= form_with(model: notice, local: true) do |form| %>
-  <% if notice.errors.any? %>
+<%= form_with(model: notice) do |form| %>
+  <% if @notice.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
 
@@ -11,42 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :sessions %>
-    <%= form.number_field :sessions %>
+    <%= form.number_field :sessions, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :openings %>
-    <%= form.number_field :openings %>
+    <%= form.number_field :openings, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :author %>
-    <%= form.text_field :author %>
+    <%= form.text_field :author, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :notes %>
-    <%= form.text_area :notes %>
+    <%= form.text_area :notes, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :reward %>
-    <%= form.text_field :reward %>
+    <%= form.text_field :reward, class: 'form-control'  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :requester %>
-    <%= form.text_field :requester %>
+    <%= form.text_field :requester, class: 'form-control'  %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'do the thing', class: 'btn btn-primary' %>
   </div>
 <% end %>
