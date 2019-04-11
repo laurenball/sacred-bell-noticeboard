@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @notice.title
+%p
+  %strong Sessions:
+  = @notice.sessions
+%p
+  %strong Openings:
+  = @notice.openings
+%p
+  %strong Author:
+  = @notice.author
+%p
+  %strong Notes:
+  = @notice.notes
+%p
+  %strong Reward:
+  = @notice.reward
+%p
+  %strong Requester:
+  = @notice.requester
+= link_to 'Edit', edit_notice_path(@notice)
+|
+= link_to 'Back', notices_path

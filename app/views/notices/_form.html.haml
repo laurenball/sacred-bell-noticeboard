@@ -1,0 +1,32 @@
+= form_with(model: notice, local: true) do |form|
+  - if notice.errors.any?
+    #error_explanation
+      %h2.alert.alert-danger
+        = pluralize(notice.errors.count, "error")
+        prohibited this notice from being saved:
+      %ul
+        - notice.errors.full_messages.each do |message|
+          %li= message
+  .field.form-group
+    = form.label :title
+    = form.text_field :title, class: 'form-control'
+  .field.form-group
+    = form.label :sessions
+    = form.number_field :sessions, class: 'form-control'
+  .field.form-group
+    = form.label :openings
+    = form.number_field :openings, class: 'form-control'
+  .field.form-group
+    = form.label :author
+    = form.text_field :author, class: 'form-control'
+  .field.form-group
+    = form.label :notes
+    = form.text_area :notes, class: 'form-control'
+  .field.form-group
+    = form.label :reward
+    = form.text_field :reward, class: 'form-control'
+  .field.form-group
+    = form.label :requester
+    = form.text_field :requester, class: 'form-control'
+  .actions
+    = form.submit 'do the thing', class: 'btn btn-primary'
