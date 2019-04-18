@@ -30,6 +30,8 @@ class NoticesController < ApplicationController
       if @notice.save
         format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
         format.json { render :show, status: :created, location: @notice }
+        $primary_channel = $bot.servers[412427872808992769].channels.select { |c| c.type == 0 && c.position == 0 }.first
+        $primary_channel.send_message('New notice incoming!')
       else
         format.html { render :new }
         format.json { render json: @notice.errors, status: :unprocessable_entity }
