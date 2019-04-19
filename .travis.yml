@@ -1,0 +1,6 @@
+language: ruby
+env:
+  discord_client_id: 'test_client_id'
+  discord_token: 'test_token'
+  server_id: '1111'
+
