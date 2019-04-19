@@ -1,5 +1,5 @@
 $bot_runner = BotRunner.new
 
-unless Rails.env.test?
+if Rails.env.production?
   $bot_runner.call
 end
