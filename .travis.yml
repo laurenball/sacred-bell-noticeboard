@@ -1,4 +1,8 @@
 language: ruby
+services:
+  - postgresql
+before_script:
+  - RAILS_ENV=test bundle exec rake db:create
 env:
   discord_client_id: 'test_client_id'
   discord_token: 'test_token'
