@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_174400) do
+ActiveRecord::Schema.define(version: 2019_04_20_012119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "notices", force: :cascade do |t|
     t.string "title"
-    t.integer "sessions"
     t.integer "openings"
     t.string "author"
     t.string "notes"
@@ -29,9 +28,9 @@ ActiveRecord::Schema.define(version: 2019_04_19_174400) do
 
   create_table "sessions", force: :cascade do |t|
     t.integer "notice_id"
-    t.date "session_date"
-    t.time "session_time"
-    t.string "session_location"
+    t.date "date"
+    t.time "time"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -19,7 +19,7 @@ class BotRunner
   end
 
   def primary_channel
-    server = ENV['server_id']
+    server = ENV['server_id'].to_i
     @bot.servers[server].channels.select { |c| c.type == 0 && c.position == 0 }.first
   end
 end

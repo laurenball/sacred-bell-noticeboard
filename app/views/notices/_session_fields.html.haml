@@ -1,0 +1,14 @@
+.nested-fields.m-3
+  .card
+    .card-body
+      .float-right
+        = link_to_remove_association "Remove session", f, class: 'btn btn-sm btn-danger'
+      .field.form-group
+        = f.label :date
+        = f.date_select :date, class: 'form-control'
+      .field.form-group
+        = f.label :time
+        = f.time_select :time, class: 'form-control'
+      .field.form-group
+        = f.label :location
+        = f.text_field :location, class: 'form-control'

@@ -10,6 +10,7 @@ class NoticesController < ApplicationController
 
   def new
     @notice = Notice.new
+    @notice.sessions.build 
   end
 
   def edit
@@ -60,6 +61,7 @@ class NoticesController < ApplicationController
   end
 
   def notice_params
-    params.require(:notice).permit(:title, :sessions, :openings, :author, :notes, :reward, :requester)
+    params.require(:notice).permit(:title, :sessions, :openings, :author, :notes, :reward, :requester, 
+                                   { sessions_attributes: [:date, :time, :location] })
   end
 end
